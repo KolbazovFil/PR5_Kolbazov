@@ -28,7 +28,7 @@ namespace PR4_Kolbazov
         {
             if (a > 22 || a < 0 || b > 38 || b < 0 || c > 20 || c < 0)
             {
-                throw new Exception("\nПревышено максимальное значение баллов одного или нескольких модулей или какое-либо из них отрецательное!");
+                throw new ArgumentOutOfRangeException("\nПревышено максимальное значение баллов одного или нескольких модулей или какое-либо из них отрецательное!");
             }
             else
             {
@@ -88,7 +88,7 @@ namespace PR4_Kolbazov
                         Console.WriteLine("Некорректный ввод. Введите числовое значение!\n");
                     }
                 }
-                catch (Exception ex)
+                catch (FormatException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
@@ -109,7 +109,7 @@ namespace PR4_Kolbazov
                         Console.WriteLine("Некорректный ввод. Введите числовое значение!\n");
                     }
                 }
-                catch (Exception ex)
+                catch (FormatException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
@@ -130,7 +130,7 @@ namespace PR4_Kolbazov
                         Console.WriteLine("Некорректный ввод. Введите числовое значение!\n");
                     }
                 }
-                catch (Exception ex)
+                catch (FormatException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }

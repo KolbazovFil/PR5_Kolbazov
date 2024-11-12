@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using PR4_Kolbazov;
-using System.Security.Principal;
-
 namespace ProgramTests
 {
     [TestClass]
@@ -10,7 +8,7 @@ namespace ProgramTests
     {
         // ----- positive
         [TestMethod]
-        public void Score_Within_Bounds_Min()
+        public void Module_MinimumValidScore()
         {
             int minScore1 = 0;
             int minScore2 = 0;
@@ -38,7 +36,7 @@ namespace ProgramTests
             Assert.AreEqual(expected3, actual3);
         }
         [TestMethod]
-        public void Score_Within_Bounds_Max()
+        public void Module_MaximunValidScore()
         {
             int minScore1 = 0;
             int minScore2 = 0;
@@ -66,7 +64,7 @@ namespace ProgramTests
             Assert.AreEqual(expected3, actual3);
         }
         [TestMethod]
-        public void Score_Within_Bounds_Sum_Min()
+        public void Sum_MinimumValidSumOfScores()
         {
             int score1 = 0;
             int score2 = 0;
@@ -80,7 +78,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Within_Bounds_Sum_Mid()
+        public void Sum_MidleValidSumOfScores()
         {
             int score1 = 0;
             int score2 = 0;
@@ -94,7 +92,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Within_Bounds_Sum_Max()
+        public void Sum_MaximumValidSumOfScores()
         {
             int score1 = 22;
             int score2 = 38;
@@ -107,9 +105,8 @@ namespace ProgramTests
 
             Assert.AreEqual(expected, actual);
         }
-        // --------------------------------------------- positive
         [TestMethod]
-        public void Score_Calculate_Min_Allowed_Assessment_2()
+        public void Calculate_MinimumValidScoresForMarkTwo()
         {
             int score1 = 0;
             int score2 = 0;
@@ -121,7 +118,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Mid_Allowed_Assessment_2()
+        public void Calculate_MidleValidScoresForMarkTwo()
         {
             int score1 = 2;
             int score2 = 3;
@@ -133,7 +130,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Max_Allowed_Assessment_2()
+        public void Calculate_MaximumValidScoresForMarkTwo()
         {
             int score1 = 5;
             int score2 = 5;
@@ -145,7 +142,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Min_Allowed_Assessment_3()
+        public void Calculate_MinimumValidScoresForMarkThree()
         {
             int score1 = 5;
             int score2 = 6;
@@ -157,7 +154,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Mid_Allowed_Assessment_3()
+        public void Calculate_MidleValidScoresForMarkThree()
         {
             int score1 = 7;
             int score2 = 7;
@@ -169,7 +166,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Max_Allowed_Assessment_3()
+        public void Calculate_MaximumValidScoresForMarkThree()
         {
             int score1 = 10;
             int score2 = 11;
@@ -181,7 +178,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Min_Allowed_Assessment_4()
+        public void Calculate_MinimumValidScoresForMarkFour()
         {
             int score1 = 11;
             int score2 = 11;
@@ -193,7 +190,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Mid_Allowed_Assessment_4()
+        public void Calculate_MidleValidScoresForMarkFour()
         {
             int score1 = 15;
             int score2 = 15;
@@ -205,7 +202,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Max_Allowed_Assessment_4()
+        public void Calculate_MaximumValidScoresForMarkFour()
         {
             int score1 = 20;
             int score2 = 15;
@@ -217,7 +214,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Min_Allowed_Assessment_5()
+        public void Calculate_MinimumValidScoresForMarkFive()
         {
             int score1 = 20;
             int score2 = 16;
@@ -229,7 +226,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Mid_Allowed_Assessment_5()
+        public void Calculate_MidleValidScoresForMarkFive()
         {
             int score1 = 22;
             int score2 = 24;
@@ -241,7 +238,7 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
         }
         [TestMethod]
-        public void Score_Calculate_Max_Allowed_Assessment_5()
+        public void Calculate_MaximumValidScoresForMarkFive()
         {
             int score1 = 22;
             int score2 = 38;
@@ -252,40 +249,17 @@ namespace ProgramTests
             string actual = calculate.Str;
             Assert.AreEqual(expected, actual);
         }
-
-
-
-
         // ----- negative
-        //[TestMethod]
-        //public void Words_And_Symbols()
-        //{
-        //    string score1 = "ф12";
-        //    string score2 = "№5";
-        //    string score3 = "*78";
-        //    Module module = new Module(score1, score2, score3);
-        //    try
-        //    {
-        //        module.Score();
-        //    }
-        //    catch (System.ArgumentOutOfRangeException e)
-        //    {
-        //        StringAssert.Contains(e.Message, BankAccount.DebitAmountExceedsBalanceMessage);
-        //        return;
-        //    }
-
-        //    Assert.Fail("The expected exception was not thrown.");
-
-
-        //    Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Module (int.TryParse(score1, score2, score3)));
-        //}
-
-
-
-
-
         [TestMethod]
-        public void Score_Less_Min()
+        public void Module_OneOrMoreWordsSymbolsInsteadNumbers_ShouldThrowFormatException()
+        {
+            string score1 = "ф12";
+            string score2 = "№5";
+            string score3 = "*78";
+            Assert.ThrowsException<FormatException>(() => new Module(int.Parse(score1), int.Parse(score2), int.Parse(score3)));
+        }
+        [TestMethod]
+        public void Module_ScoresLessMinimumOneOrMoreModules_ShouldThrowArgumentOutOfRange()
         {
             int minScore1 = 0;
             int minScore2 = 0;
@@ -302,7 +276,7 @@ namespace ProgramTests
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Module(score3, minScore3, maxScore3));
         }
         [TestMethod]
-        public void Score_More_Max()
+        public void Module_ScoresAboveMaximumOneOrMoreModules_ShouldThrowArgumentOutOfRange()
         {
             int minScore1 = 0;
             int minScore2 = 0;
@@ -318,6 +292,22 @@ namespace ProgramTests
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Module(score2, minScore2, maxScore2));
             Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Module(score3, minScore3, maxScore3));
         }
+        [TestMethod]
+        public void Module_OneOrMoreSpaceEmptyEntreeInsteadNumbers_ShouldThrowFormatException()
+        {
+            string score1 = " ";
+            string score2 = null;
+            string score3 = "";
+            Assert.ThrowsException<FormatException>(() => new Module(int.Parse(score1), int.Parse(score2), int.Parse(score3)));
+        }
+        [TestMethod]
+        public void Sum_SumScoresAboveMaximum_ShouldThrowArgumentOutOfRange()
+        {
+            int score1 = 23;    // 22
+            int score2 = 38;    // 38
+            int score3 = 20;    // 20
 
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() => new Sum(score1, score2, score3));
+        }
     }
 }
