@@ -65,8 +65,37 @@ namespace ProgramTests
             Assert.AreEqual(expected2, actual2);
             Assert.AreEqual(expected3, actual3);
         }
+
         [TestMethod]
-        public void Score_Within_Bounds_Sum()
+        public void Score_Within_Bounds_Sum_Min()
+        {
+            int score1 = 0;
+            int score2 = 0;
+            int score3 = 0;
+            int expected = 0;
+
+            Sum sum = new Sum(score1, score2, score3);
+
+            int actual = sum.Total;
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Score_Within_Bounds_Sum_Mid()
+        {
+            int score1 = 0;
+            int score2 = 0;
+            int score3 = 0;
+            int expected = 0;
+
+            Sum sum = new Sum(score1, score2, score3);
+
+            int actual = sum.Total;
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Score_Within_Bounds_Sum_Max()
         {
             int score1 = 22;
             int score2 = 38;
@@ -79,8 +108,105 @@ namespace ProgramTests
 
             Assert.AreEqual(expected, actual);
         }
+        // --------------------------------------------------------
         [TestMethod]
-        public void Score_Calculate()
+        public void Score_Calculate_Min_Allowed_Assessment_2()
+        {
+            int score1 = 0;
+            int score2 = 0;
+            int score3 = 0;
+            int total = score1 + score2 + score3;
+            string expected = "Оценка: \"2\" (Неудовлетворительно)";
+
+            Calculate calculate = new Calculate(total);
+
+            string actual = calculate.Str;
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Score_Calculate_Mid_Allowed_Assessment_2()
+        {
+            int score1 = 2;
+            int score2 = 3;
+            int score3 = 4;
+            int total = score1 + score2 + score3;
+            string expected = "Оценка: \"2\" (Неудовлетворительно)";
+
+            Calculate calculate = new Calculate(total);
+
+            string actual = calculate.Str;
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Score_Calculate_Max_Allowed_Assessment_2()
+        {
+            int score1 = 5;
+            int score2 = 5;
+            int score3 = 5;
+            int total = score1 + score2 + score3;
+            string expected = "Оценка: \"2\" (Неудовлетворительно)";
+
+            Calculate calculate = new Calculate(total);
+
+            string actual = calculate.Str;
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Score_Calculate_Min_Allowed_Assessment_3()
+        {
+            int score1 = 5;
+            int score2 = 6;
+            int score3 = 5;
+            int total = score1 + score2 + score3;
+            string expected = "Оценка: \"3\" (Удовлетворительно)";
+
+            Calculate calculate = new Calculate(total);
+
+            string actual = calculate.Str;
+
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void Score_Calculate_Mid_Allowed_Assessment_3()
+        {
+            int score1 = 2;
+            int score2 = 3;
+            int score3 = 4;
+            int total = score1 + score2 + score3;
+            string expected = "Оценка: \"2\" (Неудовлетворительно)";
+
+            Calculate calculate = new Calculate(total);
+
+            string actual = calculate.Str;
+
+            Assert.AreEqual(expected, actual);
+
+        }
+        [TestMethod]
+        public void Score_Calculate_Max_Allowed_Assessment_3()
+        {
+            int score1 = 5;
+            int score2 = 5;
+            int score3 = 5;
+            int total = score1 + score2 + score3;
+            string expected = "Оценка: \"2\" (Неудовлетворительно)";
+
+            Calculate calculate = new Calculate(total);
+
+            string actual = calculate.Str;
+
+            Assert.AreEqual(expected, actual);
+
+        }
+
+
+        [TestMethod]
+        public void Score_Calculate_Max_Allowed_Assessment_5()
         {
             int score1 = 22;
             int score2 = 38;
@@ -95,6 +221,13 @@ namespace ProgramTests
             Assert.AreEqual(expected, actual);
 
         }
+
+
+
+
+
+
+
 
 
         // ----- negative

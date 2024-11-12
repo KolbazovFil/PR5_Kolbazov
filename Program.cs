@@ -39,24 +39,25 @@ namespace PR4_Kolbazov
     public class Calculate
     {
         public int Total { get; private set; }
+        public string Str { get; private set; }
         public Calculate(int totalScore)
         {
             Total = totalScore;
             if (totalScore >= 56 && totalScore <= 80)
             {
-                Console.WriteLine("Оценка: \"5\" (Отлично)");
+                Str = "Оценка: \"5\" (Отлично)";
             }
             else if (totalScore >= 32 && totalScore <= 55)
             {
-                Console.WriteLine("Оценка: \"4\" (Хорошо)");
+                Str = "Оценка: \"4\" (Хорошо)";
             }
             else if (totalScore >= 16 && totalScore <= 31)
             {
-                Console.WriteLine("Оценка: \"3\" (Удовлетворительно)");
+                Str = "Оценка: \"3\" (Удовлетворительно)";
             }
             else if (totalScore >= 0 && totalScore <= 15)
             {
-                Console.WriteLine("Оценка: \"2\" (Неудовлетворительно)");
+                Str = "Оценка: \"2\" (Неудовлетворительно)";
             }
             else
             {
@@ -139,6 +140,7 @@ namespace PR4_Kolbazov
                 Sum total = new Sum(a, a1, a2);
                 Console.WriteLine("");
                 Calculate calc = new Calculate(total.Total);
+                Console.WriteLine(calc.Str);
             }
             catch (Exception ex)
             {
